@@ -141,7 +141,7 @@ header p {
 }
 
 .ingredient-card:hover {
-  border: 1px solid #6DCA53;
+  border: none;
 }
 
 .ingredient-card.active {
@@ -1116,6 +1116,22 @@ display: inline-flex;
   font-weight: 500;
 }
 
+.recipe-form-cards-container {
+  height: 400px;
+  margin: 4px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: space-evenly;
+  overflow-y: auto;
+}
+
+.ingredients-count {
+  display: grid;
+  margin: 1vh;
+}
+
 .ingredients-count input {
   margin: 6px;
   height: 34px;
@@ -1134,8 +1150,6 @@ display: inline-flex;
   display: none;
 }
 
-************************************
-
 .recipe-form-cards-container {
   width: 300px;
   height: 320px;
@@ -1144,7 +1158,7 @@ display: inline-flex;
   display: block;
 }
 
-***********************************
+.recipe-steps-arrangement {}
 
 
 .recipe-steps-container input{
@@ -1179,8 +1193,8 @@ display: inline-flex;
 
 .send-button {
   margin: 4vh 0 1vh 0;
-  width: 340px;
-  padding: 10px 120px;
+  width: 40px;
+  padding: 10px 10px;
   color:#FFFFF5;
   white-space: nowrap;
   text-align: center;
