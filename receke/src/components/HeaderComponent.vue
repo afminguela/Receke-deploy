@@ -1,4 +1,6 @@
 <script>
+import HomeView from '@/views/HomeView.vue';
+
 export default {
     name: 'HeaderComponent',
 }
@@ -7,12 +9,18 @@ export default {
 <template>
     <div class="header-arrangement">
         <header class="header-logo">
+            <router-link :to="$router.back()">
+
             <img src="../assets/img/Receke.png" alt="Receké Logo" />
+            </router-link>
+
             <h1>Recetas fáciles con <br />lo que tienes en la nevera</h1>
             <p>Selecciona tus ingredientes</p>
         </header>
         <div class="desktop-logo">
-            <img src="../assets/favicons/android-chrome-192x192.png" alt="Receké Logo" />
+            <router-link :to="$router.back()">
+                <img src="../assets/favicons/android-chrome-192x192.png" alt="Receké Logo" />
+            </router-link>
         </div>
     </div>
 </template>

@@ -90,7 +90,7 @@ export default {
                 <div>
                     <img :src="`/media/${item.image}`">
                     <h4> {{ item.ingredient }} {{ item.quantity }}</h4>
-                </div>
+                
             </div>
 
             <!-- Ingredients -->
@@ -134,3 +134,4 @@ export default {
     </div>
 
 </template>
+<style></style>

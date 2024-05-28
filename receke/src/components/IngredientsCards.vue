@@ -27,5 +27,5 @@ export default {
         </button>
     </div>
 </template>
-<style>
-</style>
+
+<style> </style>
