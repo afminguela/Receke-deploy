@@ -271,7 +271,6 @@ overflow: hidden;
 }
 
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
 .image-container img {
   width: 200px;
@@ -279,9 +278,7 @@ overflow: hidden;
   object-fit: cover;
 }
 
->>>>>>> a76b6ff (recipe-view-style-correction-1)
-=======
->>>>>>> c73f6be (front-styles-correction)
+>>>>>>> 90f0e42 (recipe-view-style-correction-1)
 .recipes-container h2{
   width: auto;
   margin: 1vh;
