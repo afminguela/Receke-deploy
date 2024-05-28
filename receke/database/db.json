@@ -471,6 +471,32 @@
         }
       ],
       "evaluation": []
+    },
+    {
+      "id": "94a1",
+      "title": "",
+      "instructions": [
+        "batir los huevos"
+      ],
+      "image": "imagen",
+      "ingredients": [
+        {
+          "ingredient": "Huevo",
+          "quantity": "2"
+        },
+        {
+          "ingredient": "Leche",
+          "quantity": "1 taza"
+        },
+        {
+          "ingredient": "Azúcar",
+          "quantity": "1 taza"
+        },
+        {
+          "ingredient": "Limón",
+          "quantity": "medio"
+        }
+      ]
     }
   ],
   "ingredients": [
