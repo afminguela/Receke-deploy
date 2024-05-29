@@ -1,6 +1,34 @@
 {
   "recipes": [
     {
+      "id": "1",
+      "title": "Tortilla de patatas",
+      "instructions": [
+        "Romper los huevos",
+        "Batir los huevos",
+        "Pelar las patatas",
+        "Cocer las patatas",
+        "Añadir el huevo"
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Truita_de_patates.png",
+      "ingredients": [
+        {
+          "ingredient": "Patata",
+          "quantity": "4"
+        },
+        {
+          "ingredient": "Huevo",
+          "quantity": "3"
+        }
+      ],
+      "evaluation": [
+        3,
+        1,
+        3,
+        3
+      ]
+    },
+    {
       "id": "2",
       "title": "Arroz con leche",
       "instructions": [
@@ -188,43 +216,34 @@
       "ingredients": [
         {
           "ingredient": "Puerro",
-          "quantity": "3-4 (grandes)",
-          "image": "http://localhost:5173/src/assets/media/puerro.png"
+          "quantity": "3-4 (grandes)"
         },
         {
           "ingredient": "Patata",
-          "quantity": "200 g",
-          "image": "http://localhost:5173/src/assets/media/patata.png"
+          "quantity": "200 g"
         },
         {
           "ingredient": "Aceite de oliva",
-          "quantity": "50 g",
-          "image": "http://localhost:5173/src/assets/media/aceite.png"
+          "quantity": "50 g"
         },
         {
           "ingredient": "Leche",
-          "quantity": "500 g",
-          "image": "http://localhost:5173/src/assets/media/leche.png"
+          "quantity": "500 g"
         },
         {
           "ingredient": "Caldo de ave",
-          "quantity": "500 g",
-          "image": "http://localhost:5173/src/assets/media/caldo.png"
+          "quantity": "500 g"
         },
         {
           "ingredient": "Sal",
-          "quantity": "Al gusto",
-          "image": "http://localhost:5173/src/assets/media/especias.png"
+          "quantity": "Al gusto"
         },
         {
           "ingredient": "Pimienta",
-          "quantity": "Al gusto",
-          "image": "http://localhost:5173/src/assets/media/especias.png"
+          "quantity": "Al gusto"
         }
       ],
-      "evaluation": [
-        3
-      ]
+      "evaluation": []
     },
     {
       "id": "7",
