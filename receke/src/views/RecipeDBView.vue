@@ -98,13 +98,8 @@ export default {
 
             <!-- Ingredients list -->
             <div class="ingredients-list" v-for="(item, index) in recipeSelected.ingredients" :key="index">
-<<<<<<< HEAD
                 <div>
                     <img :src="`/media/${item.image}`">
-=======
-                
-                    <img :src="item.image">
->>>>>>> 0c5670f (merge: restore changes from dev to feature/delete)
                     <h4> {{ item.ingredient }} {{ item.quantity }}</h4>
                 
             </div>
