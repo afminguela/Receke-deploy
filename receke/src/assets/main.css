@@ -270,7 +270,7 @@ overflow: hidden;
   background-color: #ffd3332f;
 }
 
->>>>>>> 90f0e42 (recipe-view-style-correction-1)
+/* >>>>>>> 90f0e42 (recipe-view-style-correction-1 */
 .recipes-container h2{
   width: auto;
   margin: 1vh;
@@ -1452,12 +1452,12 @@ form .form-column .form-block .cards-container {
 
 
 
-}
 
 
 
 
 }
+
 
 
 /****************** STARS IN RECIPE VIEW **************************/
