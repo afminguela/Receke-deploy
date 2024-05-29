@@ -74,8 +74,8 @@ export const useRecipesStore = defineStore('recipesStore', {
       })
     },
 
-    async editRecipe(id, evaluation){
-      const url = `${baseUrl}/recipes/${id}`;
+    async editRecipe(id, evaluation) {
+      const url = `${baseUrl}/recipes/${id}`
       await fetch(url, {
         method: 'PATCH',
         headers: {
