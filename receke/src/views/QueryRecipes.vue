@@ -95,12 +95,12 @@ export default {
 
             <router-link :to="`/recipe-view/${recipe.id}`">
 
-               <div :class="{ 'bg-green': recipe.matchAll === true }">
+               <div id="recipe-query--container" :class="{ 'bg-green': recipe.matchAll === true }">
                     <div class="image-container"  > 
                     <img :src="recipe.image" :alt="`${recipe.title}`" >
                     </div>
 
-                    <h2 style="color:var(--receke-black); font-family: 'Roboto'"   >{{ recipe.title }}</h2>
+                    <h2  >{{ recipe.title }}</h2>
                     <p v-if="recipe.matchAll === true">Tienes todos los Ingredientes</p>
                     <p v-else-if="recipe.count === 1">Tienes {{ recipe.count }} ingrediente</p>
                     <p v-else>Tienes {{ recipe.count }} ingredientes</p>
@@ -118,27 +118,4 @@ export default {
 
 </template>
 
-<style>
-.bg-green p {
-    color: var(--receke-green-100) ;
-}
-
-.image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    aspect-ratio: 4/3;
-    width: 150px ;
-    overflow: hidden;
-}
-
-.image-container img {
-    width: auto;
-    height: 100%;
-    object-fit: cover;
-}
-.recipes-container .recipe-card {
-    height: initial;
-}
-
-</style> 
+<style></style>

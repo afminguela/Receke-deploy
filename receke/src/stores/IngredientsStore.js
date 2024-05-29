@@ -4,9 +4,8 @@ export const useIngredientsStore = defineStore('IngredientsStore', {
   state: () => ({
     ingredients: [],
     ingredientsToShow: [],
-    selectedIngredients: [],
+    selectedIngredients: JSON.parse(localStorage.getItem('selectedIngredients')) || [],
     categories: []
-    //ingredients : parseInt(localStorage.getItem('ingredients') || [])
   }),
   actions: {
     async fetchIngredients() {
@@ -28,6 +27,7 @@ export const useIngredientsStore = defineStore('IngredientsStore', {
       } else {
         this.selectedIngredients.push(name)
       }
+      localStorage.setItem('selectedIngredients', JSON.stringify(this.selectedIngredients))
     },
     filterIngredients(category = 'all') {
       if (category === 'all') {

@@ -13,7 +13,7 @@ export default {
 
 <template>
     <div class="button-container">
-        <button class="button-style" @click="filterIngredients()">
+        <button id="all-button-style" @click="filterIngredients()">
             Todos
         </button>
         <button class="button-style" @click="filterIngredients(category.name)" v-for="category in categories" :key="category.id">

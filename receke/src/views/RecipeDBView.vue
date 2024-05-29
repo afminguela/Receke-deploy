@@ -16,15 +16,17 @@ export default {
             mediumEvaluation: '',
             // Total de valoraciones
             totalNumEvaluation: '',
+            showDelete: false,
+            deleteStatus: ''
         }
     },
     methods: {
-        ...mapActions(useRecipesStore, ['getRecipeById','editRecipe']),
+        ...mapActions(useRecipesStore, ['getRecipeById', 'editRecipe', 'deleteRecipe']),
         getIngredientImage(ingredient) {
             const ingredientMatch = this.ingredients.find((item) => item.name === ingredient)
             return ingredientMatch.image
         },
-        checkStars(star){
+        checkStars(star) {
             // Le doy valor a starsSelected para usarlo en el dom
             this.starsSelected = star;
         },
@@ -41,21 +43,33 @@ export default {
             evaluationArray.push(stars)
 
             // Creo el nuevo objeto con los valores de la receta
-            const edited = {...this.recipeSelected, evaluation: evaluationArray}
+            const edited = { ...this.recipeSelected, evaluation: evaluationArray }
             console.log(edited);
 
             // Utilizo la función del store de editar receta
             this.editRecipe(id, edited)
+
+            // reload
+            window.location.reload();
         },
-        showEvaluation(){
-            console.log(this.recipeSelected.evaluation);
+        showEvaluation() {
+            //console.log(this.recipeSelected.evaluation);
             const evaluations = this.recipeSelected.evaluation;
             
             const sum = evaluations.reduce((total, num) => total + num, 0);
             this.totalNumEvaluation = evaluations.length;
-            
+
             const medium = (sum / evaluations.length).toFixed(2);
             this.mediumEvaluation = medium;
+        },
+        async deleteRecipeWithError(id) {
+            const response = await this.deleteRecipe(id);
+            //Adding 500 code as a workaround for JSON Server API on Vercel showing error but applying the delete
+            if (response === 200 || response === 500) {
+                this.deleteStatus = 'Receta borrada correctamente'
+            } else {
+                this.deleteStatus = 'Error al borrar la receta'
+            }
         }
     },
     computed: {
@@ -87,10 +101,10 @@ export default {
 
             <!-- Ingredients list -->
             <div class="ingredients-list" v-for="(item, index) in recipeSelected.ingredients" :key="index">
-                <div>
+                
                     <img :src="item.image">
                     <h4> {{ item.ingredient }} {{ item.quantity }}</h4>
-                </div>
+                
             </div>
 
             <!-- Ingredients -->
@@ -105,16 +119,19 @@ export default {
                 </ol>
             </div>
 
-            
+
 
             <!-- <button class="add-button" @click="showEvaluation()" >Mostrar evaluacion</button> -->
-            <div class="evaluation" v-if="this.mediumEvaluation !== ''">
+            <div class="evaluation" v-if="this.totalNumEvaluation > 0">
                 <div class="cal">
                     <p>{{ this.mediumEvaluation }}</p><span>/5</span>
                 </div>
                 <p>de un total de <span>{{ this.totalNumEvaluation }} valoraciones</span></p>
             </div>
-            
+            <div class="evaluation" v-else>
+                <p>Aún no existen valoraciones para esta receta, ¡Sé el primero!</p>
+            </div>
+
 
 
             <div class="stars">
@@ -128,95 +145,36 @@ export default {
                         <!-- <p>{{ star }}</p> -->
                     </div>
                 </div>
-                <button class="send-button" :class="{'disabled': starsSelected === ''}" @click="selectStars(this.starsSelected)">Enviar valoración</button>
+                <button class="send-button" :class="{ 'disabled': starsSelected === '' }"
+                    @click="selectStars(this.starsSelected)">Enviar valoración</button>
             </div>
+
+
+            <div class="delete">
+                <button class="delete-button" @click="showDelete = true">Borrar receta</button>
+            </div>
+
+            <div class="sentMessage" v-if="showDelete">
+                <div v-if="!this.deleteStatus">
+                    <p>Quieres borrar esta receta?</p>
+                    <button @click="deleteRecipeWithError(recipeSelected.id)" class="search-button">Aceptar</button>
+                    <button @click="showDelete = false" class="add-button">Cancelar</button>
+                </div>
+                <div v-else>
+                    <p>{{ this.deleteStatus }}</p>
+                    <button @click="showDelete = false, this.$router.push('/query-recipes')"
+                        class="add-button">Aceptar</button>
+                </div>
+            </div>
+
+            
         </div>
     </div>
 
 </template>
 <style>
-.recipe-image img{
-    max-width: 100%;
-    height: 200px;
-}
 
-.evaluation {
-    color: var(--receke-black);
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    background-color: var(--receke-lemon-50);
-    overflow: hidden;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-}
 
-.evaluation .cal {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-}
 
-.evaluation .cal p {
-    font-size: 42px;
-    line-height: 42px;
-}
-
-.stars h3 {
-    color: var(--receke-black);
-}
-
-.stars .stars-container {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-}
-
-.stars .stars-container.selected1 .star:nth-child(1) {
-    opacity: 1;
-}
-
-.stars .stars-container.selected2 .star:nth-child(1),
-.stars .stars-container.selected2 .star:nth-child(2) {
-    opacity: 1;
-}
-
-.stars .stars-container.selected3 .star:nth-child(1),
-.stars .stars-container.selected3 .star:nth-child(2),
-.stars .stars-container.selected3 .star:nth-child(3) {
-    opacity: 1;
-}
-
-.stars .stars-container.selected4 .star:nth-child(1),
-.stars .stars-container.selected4 .star:nth-child(2),
-.stars .stars-container.selected4 .star:nth-child(3),
-.stars .stars-container.selected4 .star:nth-child(4) {
-    opacity: 1;
-}
-
-.stars .stars-container.selected5 .star {
-    opacity: 1;
-}
-
-.stars .stars-container .star {
-    opacity: 0.5;
-    width: 30px;
-    aspect-ratio: 1/1;
-    height: 30px;
-    background-position: center center;
-    background-size: contain;;
-    background-image: url('data:image/svg+xml,<svg width="127" height="127" viewBox="0 0 127 127" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M63.2647 0L47.4485 47.4485H0L39.5404 79.0809L23.7243 126.529L63.2647 94.8971L102.805 126.529L86.989 79.0809L126.529 47.4485H79.0809L63.2647 0Z" fill="%23DC8A0B"/></svg>');
-}
-
-.stars .stars-container .star:hover {
-    opacity: 1;
-}
-
-.send-button.disabled {
-    background-color: grey;
-    pointer-events: none;
-}
 
 </style>

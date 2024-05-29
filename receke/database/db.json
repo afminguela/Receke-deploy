@@ -14,17 +14,23 @@
       "ingredients": [
         {
           "ingredient": "Patata",
-          "quantity": "4"
+          "quantity": "4",
+          "image": "http://localhost:5173/src/assets/media/patata.png"
         },
         {
           "ingredient": "Huevo",
-          "quantity": "3"
+          "quantity": "3",
+          "image": "http://localhost:5173/src/assets/media/huevo.png"
         }
       ],
       "evaluation": [
         3,
         1,
         3,
+        3,
+        5,
+        3,
+        5,
         3
       ]
     },
@@ -44,23 +50,28 @@
       "ingredients": [
         {
           "ingredient": "Leche",
-          "quantity": "1 l"
+          "quantity": "1 l",
+          "image": "http://localhost:5173/src/assets/media/leche.png"
         },
         {
           "ingredient": "Arroz",
-          "quantity": "100 g"
+          "quantity": "100 g",
+          "image": "http://localhost:5173/src/assets/media/arroz.png"
         },
         {
           "ingredient": "Azúcar",
-          "quantity": "70 g"
+          "quantity": "70 g",
+          "image": "http://localhost:5173/src/assets/media/harina.png"
         },
         {
           "ingredient": "Limón",
-          "quantity": "1"
+          "quantity": "1",
+          "image": "http://localhost:5173/src/assets/media/limon.png"
         },
         {
           "ingredient": "Canela",
-          "quantity": "1 rama y 1 piza de canela molida"
+          "quantity": "1 rama y 1 piza de canela molida",
+          "image": "http://localhost:5173/src/assets/media/especias.png"
         }
       ],
       "evaluation": [
@@ -73,7 +84,8 @@
         3,
         3,
         4,
-        4
+        4,
+        5
       ]
     },
     {
@@ -471,6 +483,32 @@
         }
       ],
       "evaluation": []
+    },
+    {
+      "id": "11",
+      "title": "Sardinas a la plancha",
+      "instructions": [
+        "Secar las sardinas con sal durante 1 hora para que cojan sabor.",
+        "Calentar la plancha y agregar el aceite.",
+        "Agregar las sardinas y cocinar durante 3 o 4 minutos.",
+        "Retirar y servir con el jugo del limón."
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Sardinas_a_la_plancha-_C%C3%A1diz_-_2009.jpg/1024px-Sardinas_a_la_plancha-_C%C3%A1diz_-_2009.jpg",
+      "ingredients": [
+        {
+          "ingredient": "Sardina",
+          "quantity": "250 g"
+        },
+        {
+          "ingredient": "Limón",
+          "quantity": "1 rodaja"
+        },
+        {
+          "ingredient": "Aceite de oliva",
+          "quantity": "1 chorrito"
+        }
+      ],
+      "evaluation": []
     }
   ],
   "ingredients": [
@@ -725,6 +763,12 @@
       "name": "Albahaca",
       "category": "Otros",
       "image": "http://localhost:5173/src/assets/media/especias.png"
+    },
+    {
+      "id": "43",
+      "name": "Sardina",
+      "category": "🐟 Pescados",
+      "image": "http://localhost:5173/src/assets/media/sardina.png"
     }
   ],
   "categories": [

@@ -71,8 +71,8 @@ export default {
         border: 1px solid green;
     }
     .ingredient-card-wrapper .ingredient-quantity{
-        margin: 0px 6px 6px 6px;
-        width: 100px;
+        margin: 0px 0px 6px 0px;
+        width: 88px;
     }
     .ingredient-card-wrapper.active .ingredient-quantity{
         pointer-events: none;

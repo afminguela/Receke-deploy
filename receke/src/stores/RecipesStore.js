@@ -9,7 +9,8 @@ export const useRecipesStore = defineStore('recipesStore', {
   //el default
   state: () => ({
     //data de default
-    recipes: [],
+    recipes: JSON.parse(localStorage.getItem('recipes')) || [],
+    recipesFiltered: JSON.parse(localStorage.getItem('recipesFiltered')) || [],
     recipeSelected: {}
     // recipeName: '',
 
@@ -32,6 +33,7 @@ export const useRecipesStore = defineStore('recipesStore', {
     async fetchRecipes() {
       let response = await fetch(`${baseUrl}/recipes`)
       let recipes = await response.json()
+      localStorage.setItem('recipes', JSON.stringify(recipes))
       this.recipes = recipes
     },
 
@@ -85,6 +87,14 @@ export const useRecipesStore = defineStore('recipesStore', {
       })
     },
 
+    async deleteRecipe(id) {
+      const url = `${baseUrl}/recipes/${id}`
+      const response = await fetch(url, {
+        method: 'DELETE'
+      })
+      return response.status
+    },
+
     //obtiene un listado de recetas de la base de datos
 
     // marca como seleccionada una receta
@@ -122,7 +132,7 @@ export const useRecipesStore = defineStore('recipesStore', {
     // }
 
     async filterRecipesByIngredients(recipes, selectedIngredients) {
-      console.log('inside filterRecipesByIngredients')
+      //console.log('inside filterRecipesByIngredients')
       //console.log("esto es el array recipes", recipes);
       //console.log("esto es el array selectedIngredients", selectedIngredients);
 
@@ -148,8 +158,9 @@ export const useRecipesStore = defineStore('recipesStore', {
 
       recipesFiltered.sort((a, b) => b.count - a.count)
 
-      console.log('después de la función', recipesFiltered) //test 3
+      //console.log('después de la función', recipesFiltered) //test 3
 
+      localStorage.setItem('recipesFiltered', JSON.stringify(recipesFiltered))
       this.recipesFiltered = recipesFiltered
 
       //console.log("después de asignar", this.recipesFiltered); //test 3
