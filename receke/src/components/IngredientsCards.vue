@@ -7,7 +7,10 @@ export default {
     },
     methods: {
         ...mapActions(useIngredientsStore, ['toggleIngredient'])
+
+        
     }
+
 }
 </script>
 <template>
@@ -19,7 +22,7 @@ export default {
             :key="ingredient.name"
             :class="{ 'active': selectedIngredients.includes(ingredient.name) }"
         >
-            <img :src="`../assets/media/${ingredient.image}`" alt="ingredient.name">
+            <img :src="`/media/${ingredient.image}`" alt="ingredient.name">
             <h3>{{ ingredient.name }}</h3>
         </button>
     </div>
