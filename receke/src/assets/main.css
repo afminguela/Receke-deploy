@@ -270,6 +270,15 @@ overflow: hidden;
   background-color: #ffd3332f;
 }
 
+<<<<<<< HEAD
+=======
+.image-container img {
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+}
+
+>>>>>>> a76b6ff (recipe-view-style-correction-1)
 .recipes-container h2{
   width: auto;
   margin: 1vh;
