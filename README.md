@@ -35,7 +35,10 @@ Developed to help people with cooking challenges in order to:
 
 ## 👩‍💻 Technology
 
-Frontend: HTML, CSS, Javascrit y VUE.
+Frontend: HTML, CSS, Javascrit y VUE.JS 3.
+Api Rest: Json-Server
+Stores: Pinia.
+Deployment: Vercel, visit us at https://receke.vercel.app
 
 
 
