@@ -74,8 +74,8 @@ export const useRecipesStore = defineStore('recipesStore', {
       })
     },
 
-    async editRecipe(id, evaluation){
-      const url = `${baseUrl}/recipes/${id}`;
+    async editRecipe(id, evaluation) {
+      const url = `${baseUrl}/recipes/${id}`
       await fetch(url, {
         method: 'PATCH',
         headers: {
@@ -83,6 +83,14 @@ export const useRecipesStore = defineStore('recipesStore', {
         },
         body: JSON.stringify(evaluation)
       })
+    },
+
+    async deleteRecipe(id) {
+      const url = `${baseUrl}/recipes/${id}`
+      const response = await fetch(url, {
+        method: 'DELETE'
+      })
+      return response.status
     },
 
     //obtiene un listado de recetas de la base de datos
