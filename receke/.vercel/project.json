@@ -1,0 +1,15 @@
+{
+  "projectId": "prj_OUY4cSysh31mHhVSnPwTNRRD2XY3",
+  "orgId": "team_PSc4hLj7PgNZelyVRLA35CKo",
+  "settings": {
+    "createdAt": 1716931712682,
+    "framework": "vue",
+    "devCommand": null,
+    "installCommand": null,
+    "buildCommand": null,
+    "outputDirectory": null,
+    "rootDirectory": null,
+    "directoryListing": false,
+    "nodeVersion": "20.x"
+  }
+}

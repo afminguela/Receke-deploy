@@ -270,7 +270,11 @@ overflow: hidden;
   background-color: #ffd3332f;
 }
 
+>>>>>>> 90f0e42 (recipe-view-style-correction-1)
 .recipes-container h2{
+  width: auto;
+  margin: 1vh;
+  padding: 4px auto;
   width: auto;
   margin: 1vh;
   padding: 4px auto;
@@ -280,6 +284,8 @@ overflow: hidden;
 }
 
 .recipes-container p{
+  margin: 1vh;
+
   margin: 1vh;
 
   color: #D61F31;
@@ -298,11 +304,11 @@ font-family: 'Roboto';
   }
 
 
-/*****************************/
+*****************************
 
 
 .bg-green p {
-  color: var(--receke-green-100)!important ;
+  color: var(--receke-green-100) ;
 }
 
 .image-container {
@@ -331,7 +337,54 @@ recipe-card p {
   max-width: 100px;
 }
 
-/******************************/
+*****************************
+
+
+
+#recipe-query-container {
+color:var(--receke-black); 
+font-family: 'Roboto'; 
+}
+
+#recipe-query-container div {
+  max-width: 100px !important;
+  }
+
+
+*****************************
+
+
+.bg-green p {
+  color: var(--receke-green-100) ;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 4/3;
+  width: 150px ;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  height: 200px;
+}
+
+.recipes-container .recipe-card {
+  height: initial;
+  max-width: 180px !important;
+
+}
+
+recipe-card p {
+  max-width: 100px;
+}
+
+*****************************
 
 
 /* Recipe page styles - Mobile */
@@ -1326,6 +1379,9 @@ display: inline-flex;
   display: block;
 }
 
+.recipe-steps-arrangement {}
+
+
 .recipe-steps-container input{
   height: 120px;
   width: 240px;
@@ -1359,6 +1415,9 @@ display: inline-flex;
 .send-button {
   margin: 2vh 0 1vh 40px;
   width: 300px;
+  padding: 10px 10px;
+  margin: 4vh 0 1vh 0;
+  width: 40px;
   padding: 10px 10px;
   color:#FFFFF5;
   white-space: nowrap;
@@ -1397,3 +1456,87 @@ form .form-column .form-block .cards-container {
 
 
 
+
+}
+
+
+/****************** STARS IN RECIPE VIEW **************************/
+
+.evaluation {
+  color: var(--receke-black);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--receke-lemon-50);
+  overflow: hidden;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.evaluation .cal {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.evaluation .cal p {
+  font-size: 42px;
+  line-height: 42px;
+}
+
+.stars h3 {
+  color: var(--receke-black);
+}
+
+.stars .stars-container {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.stars .stars-container.selected1 .star:nth-child(1) {
+  opacity: 1;
+}
+
+.stars .stars-container.selected2 .star:nth-child(1),
+.stars .stars-container.selected2 .star:nth-child(2) {
+  opacity: 1;
+}
+
+.stars .stars-container.selected3 .star:nth-child(1),
+.stars .stars-container.selected3 .star:nth-child(2),
+.stars .stars-container.selected3 .star:nth-child(3) {
+  opacity: 1;
+}
+
+.stars .stars-container.selected4 .star:nth-child(1),
+.stars .stars-container.selected4 .star:nth-child(2),
+.stars .stars-container.selected4 .star:nth-child(3),
+.stars .stars-container.selected4 .star:nth-child(4) {
+  opacity: 1;
+}
+
+.stars .stars-container.selected5 .star {
+  opacity: 1;
+}
+
+.stars .stars-container .star {
+  opacity: 0.5;
+  width: 30px;
+  aspect-ratio: 1/1;
+  height: 30px;
+  background-position: center center;
+  background-size: contain;;
+  background-image: url('data:image/svg+xml,<svg width="127" height="127" viewBox="0 0 127 127" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M63.2647 0L47.4485 47.4485H0L39.5404 79.0809L23.7243 126.529L63.2647 94.8971L102.805 126.529L86.989 79.0809L126.529 47.4485H79.0809L63.2647 0Z" fill="%23DC8A0B"/></svg>');
+}
+
+.stars .stars-container .star:hover {
+  opacity: 1;
+}
+
+.send-button.disabled {
+  background-color: grey;
+  pointer-events: none;
+}
