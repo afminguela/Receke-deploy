@@ -161,13 +161,4 @@ export default {
     </div>
 
 </template>
-<<<<<<< HEAD
 <style></style>
-=======
-<style>
-
-
-
-
-</style>
->>>>>>> df198ac (styles stars)
