@@ -50,7 +50,7 @@ export default {
             this.editRecipe(id, edited)
         },
         showEvaluation() {
-            console.log(this.recipeSelected.evaluation);
+            //console.log(this.recipeSelected.evaluation);
             const evaluations = this.recipeSelected.evaluation;
             
             const sum = evaluations.reduce((total, num) => total + num, 0);
