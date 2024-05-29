@@ -119,7 +119,7 @@ export default {
 
 
             <!-- <button class="add-button" @click="showEvaluation()" >Mostrar evaluacion</button> -->
-            <div class="evaluation" v-if="this.mediumEvaluation !== ''">
+            <div class="evaluation" v-if="this.mediumEvaluation !== 0">
                 <div class="cal">
                     <p>{{ this.mediumEvaluation }}</p><span>/5</span>
                 </div>
