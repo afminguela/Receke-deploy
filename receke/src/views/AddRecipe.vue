@@ -27,6 +27,8 @@ export default {
       steps: ['pasoDummy'],
       recipeImage: '',
 
+      error: false,
+      errorImg: false,
       isActive: false,
       isSent: false,
     }
@@ -37,6 +39,16 @@ export default {
 
     async createRecipe(recipeName, steps, selectedIngredients, recipeImage) {
       console.log(recipeName, steps, selectedIngredients, recipeImage)
+
+      this.error = false,
+      this.errorImg = false,
+      console.log(selectedIngredients)
+      console.log(steps.length)
+      if (recipeName === '' || selectedIngredients.length === 0 || steps.length === 1 ) {
+        return this.error = true;
+      } else if ( !recipeImage.includes("https") ) {
+        return this.errorImg = true;
+      }
 
       steps.shift();
       const newRecipe = {
@@ -49,6 +61,7 @@ export default {
       console.log(newRecipe)
       this.postRecipe(newRecipe)
 
+      
       this.isSent = true
     }
   }
@@ -63,7 +76,7 @@ export default {
       <div class="form-column">
         <div class="form-block form-recipe-name">
           <label class="ingredients-title" for="recipe-name">Nombre de la receta</label>
-          <input type="text" v-model="recipeName" placeholder="Ej: Salteado de champiñones" id="name" name="name" required minlength="4" maxlength="8" size="10" />
+          <input type="text" v-model="recipeName" placeholder="Ej: Salteado de champiñones" id="name" name="name" required minlength="4" size="10" />
         </div>
       </div>
       
@@ -111,6 +124,13 @@ export default {
         >
           Enviar receta
         </button>
+
+        <div class="error" v-if="error">
+          <p>Revisa que todos los campos estén completos</p>
+        </div>
+        <div class="error" v-if="errorImg">
+          <p>Revisa que el formato de la URL es correcto</p>
+        </div>
       </div>
       
 
@@ -142,6 +162,7 @@ export default {
     }
     form button.send-button.disabled {
       background-color: grey;
+      pointer-events: all;
     }
 
     form .form-block.form-recipe-name input.required {
@@ -166,6 +187,10 @@ export default {
     .sentMessage p {
       color: black;
       margin-bottom: 20px;
+    }
+
+    .error p {
+      color: var(--receke-red)
     }
 
     @media (min-width: 1024px) {
