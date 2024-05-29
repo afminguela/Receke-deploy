@@ -55,7 +55,7 @@ export default {
 <template>
     <div class="ingredient-card-wrapper"  :key="ingredient.id" :class="{ 'active' : isActive }">
         <div class="ingredient-card" @click="getSelectedIngredients(ingredient.name, ingredientQuantity)"> 
-            <img  :src="ingredient.image" :alt="ingredient.name">
+            <img  :src="`/media/${ingredient.image}`" :alt="ingredient.name">
             <h3>{{ ingredient.name }}</h3>
         </div>
        
