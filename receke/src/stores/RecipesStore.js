@@ -130,7 +130,7 @@ export const useRecipesStore = defineStore('recipesStore', {
     // }
 
     async filterRecipesByIngredients(recipes, selectedIngredients) {
-      console.log('inside filterRecipesByIngredients')
+      //console.log('inside filterRecipesByIngredients')
       //console.log("esto es el array recipes", recipes);
       //console.log("esto es el array selectedIngredients", selectedIngredients);
 
@@ -156,7 +156,7 @@ export const useRecipesStore = defineStore('recipesStore', {
 
       recipesFiltered.sort((a, b) => b.count - a.count)
 
-      console.log('después de la función', recipesFiltered) //test 3
+      //console.log('después de la función', recipesFiltered) //test 3
 
       this.recipesFiltered = recipesFiltered
 
