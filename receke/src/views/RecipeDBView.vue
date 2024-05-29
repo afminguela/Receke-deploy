@@ -17,7 +17,7 @@ export default {
             // Total de valoraciones
             totalNumEvaluation: '',
             showDelete: false,
-            deleteStatus: ''
+            deleteStatus: '',
             showDelete: false,
             deleteStatus: ''
         }
@@ -106,7 +106,7 @@ export default {
                 <div>
                     <img :src="`/media/${item.image}`">
                     <h4> {{ item.ingredient }} {{ item.quantity }}</h4>
-                
+                </div>
             </div>
 
             <!-- Ingredients -->
