@@ -55,7 +55,8 @@ export default {
         title: recipeName,
         instructions: steps,
         image: recipeImage,
-        ingredients: selectedIngredients
+        ingredients: selectedIngredients,
+        evaluation: []
       }
 
       console.log(newRecipe)
