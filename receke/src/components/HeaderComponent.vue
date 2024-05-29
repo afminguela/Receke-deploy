@@ -9,7 +9,7 @@ export default {
 <template>
     <div class="header-arrangement">
         <header class="header-logo">
-            <router-link :to="$router.back()">
+            <router-link to="/">
 
             <img src="../assets/img/Receke.png" alt="Receké Logo" />
             </router-link>
@@ -18,7 +18,7 @@ export default {
             <p>Selecciona tus ingredientes</p>
         </header>
         <div class="desktop-logo">
-            <router-link :to="$router.back()">
+            <router-link to="/">
                 <img src="../assets/favicons/android-chrome-192x192.png" alt="Receké Logo" />
             </router-link>
         </div>
