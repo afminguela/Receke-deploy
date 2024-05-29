@@ -101,7 +101,7 @@ export default {
                 <div>
                     <img :src="`/media/${item.image}`">
                     <h4> {{ item.ingredient }} {{ item.quantity }}</h4>
-                </div>
+                
             </div>
 
             <!-- Ingredients -->
@@ -130,9 +130,12 @@ export default {
 
             <div class="stars">
                 <h3>Valora esta receta</h3>
-                <div class="stars-container"
-                    :class="starsSelected === 1 ? 'selected1' : starsSelected === 2 ? 'selected2' : starsSelected === 3 ? 'selected3' : starsSelected === 4 ? 'selected4' : starsSelected === 5 ? 'selected5' : ''">
-                    <div class="star" v-for="star in 5" :key="star" @click="checkStars(star)">
+                <div class="stars-container" :class="starsSelected === 1? 'selected1' : starsSelected === 2? 'selected2' : starsSelected === 3? 'selected3' : starsSelected === 4? 'selected4' : starsSelected === 5? 'selected5': ''">
+                    <div class="star"  
+                        v-for="star in 5" 
+                        :key="star" 
+                        
+                        @click="checkStars(star)">
                         <!-- <p>{{ star }}</p> -->
                     </div>
                 </div>
