@@ -35,10 +35,6 @@ export default {
   methods: {
     ...mapActions(useRecipesStore, ['postRecipe']),
 
-    addStep(descriptionStep) {
-      this.steps.push(descriptionStep)
-    },
-
     async createRecipe(recipeName, steps, selectedIngredients, recipeImage) {
       console.log(recipeName, steps, selectedIngredients, recipeImage)
 
